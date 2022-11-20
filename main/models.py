@@ -14,4 +14,7 @@ class Blog(models.Model):
     def summary(self):
         return self.body[:20]
 
+class Photo(models.Model):
+    post = models.ForeignKey(Blog, on_delete=models.CASCADE, null=True)
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
     

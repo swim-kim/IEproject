@@ -6,9 +6,9 @@
 <h1>출발 : {{blog.title}}</h1>
 <h2>도착 : {{blog.writer}}</h2>
 <hr>
-{% if blog.image %}
-    <p><img src="{{ blog.image.url }}" alt="사진"></p>
-{% endif %}
+{% for photo in blog.photo_set.all %}
+    <img src="{{ photo.image.url }}" width="50"><br>
+{% endfor %}
 
 <p>{{blog.body}}</p>
 
